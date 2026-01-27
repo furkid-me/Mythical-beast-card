@@ -66,6 +66,8 @@
     left: 50% !important;
     width: 280px !important;
     height: 448px !important;
+    max-width: 85vw !important;
+    max-height: 70vh !important;
     margin: 0 !important;
     margin-right: 0 !important;
     transform: translate(-50%, -50%) !important;
@@ -197,8 +199,11 @@
     }
 
     .tarot-card.drawn {
-        width: 200px !important;
-        height: 320px !important;
+        width: 220px !important;
+        height: 352px !important;
+        max-width: 80vw !important;
+        max-height: 60vh !important;
+        top: 45% !important;
     }
 
     .tarot-card.slide-away {
@@ -243,6 +248,9 @@
     .tarot-card.drawn {
         width: 180px !important;
         height: 288px !important;
+        max-width: 75vw !important;
+        max-height: 55vh !important;
+        top: 40% !important;
         border-width: 3px !important;
     }
 
