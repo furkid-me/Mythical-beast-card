@@ -558,9 +558,13 @@ h1 {
   }
 
   .info-panel {
-    padding: var(--spacing-md) var(--spacing-sm);
-    max-height: 35vh;
+    padding: var(--spacing-sm);
+    max-height: 45vh;
     overflow-y: auto;
+  }
+
+  .info-panel.visible {
+    transform: translateY(0);
   }
 
   .tutorial-steps {
@@ -628,9 +632,13 @@ h1 {
   }
 
   .info-panel {
-    padding: var(--spacing-sm);
-    max-height: 30vh;
+    padding: var(--spacing-xs);
+    max-height: 50vh;
     overflow-y: auto;
+  }
+
+  .info-content {
+    padding: 0;
   }
 
   .tutorial-content h2 {
