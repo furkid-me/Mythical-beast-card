@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>貓咪塔羅牌 | 神秘占卜體驗</title>
-    <meta name="description" content="使用手勢控制抽取貓咪塔羅牌，體驗現代化的神秘占卜">
+    <title>神獸卡牌 | 招財納福神獸指引</title>
+    <meta name="description" content="使用手勢控制抽取神獸卡牌，讓神獸為你帶來財運與祝福">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,10 +31,10 @@
     <canvas id="canvas" style="display: none;"></canvas>
 
     <header>
-        <h1>🐱 貓咪塔羅牌 🐱</h1>
-        <p class="subtitle">左右滑動選牌，握拳抽牌</p>
+        <h1>🐉 神獸卡牌 🐉</h1>
+        <p class="subtitle">召喚神獸，指引財運</p>
         <button class="start-btn" id="startBtn">
-            🚀 開始
+            ✨ 開始占卜
         </button>
     </header>
 
@@ -47,10 +47,10 @@
     <!-- 半透明遮罩 -->
     <div class="card-overlay" id="cardOverlay"></div>
 
-    <!-- 塔羅牌滑動展示區 -->
+    <!-- 神獸卡牌滑動展示區 -->
     <div class="tarot-carousel" id="tarotCarousel">
         <div class="carousel-track" id="carouselTrack">
-            <!-- 塔羅牌會動態生成在這裡 -->
+            <!-- 神獸卡牌會動態生成在這裡 -->
         </div>
     </div>
 
@@ -58,16 +58,16 @@
     <div class="info-panel" id="infoPanel">
         <div class="info-content">
             <h2 class="card-name" id="cardName">選擇一張牌</h2>
-            <p class="card-name-en" id="cardNameEn">Choose a Card</p>
+            <p class="card-name-en" id="cardNameEn"></p>
             <div class="card-meaning" id="cardMeaning">
-                左右滑動選擇貓咪塔羅牌，握拳抽取你的命運指引
+                左右滑動選擇神獸卡牌，握拳召喚神獸的祝福
             </div>
         </div>
     </div>
 
     <!-- 導航提示 -->
     <div class="nav-hints">
-        <div class="hint">左右滑動選牌，握拳抽取你的貓咪塔羅 🐱</div>
+        <div class="hint">左右滑動選牌，握拳召喚你的守護神獸 🐉</div>
     </div>
 
     <!-- 已抽取的卡牌收集區 -->
@@ -76,25 +76,30 @@
     <!-- 使用說明（初次使用） -->
     <div class="tutorial-overlay" id="tutorialOverlay">
         <div class="tutorial-content">
-            <h2>🐱 歡迎使用貓咪塔羅牌</h2>
+            <h2>🐉 歡迎使用神獸卡牌</h2>
             <div class="tutorial-steps">
                 <div class="step">
                     <div class="step-icon">👋</div>
                     <h3>左右滑動</h3>
-                    <p>手掌左右滑動選擇卡片，選中的卡片會浮起發光</p>
+                    <p>手掌左右滑動選擇卡片</p>
                 </div>
                 <div class="step">
                     <div class="step-icon">✊</div>
-                    <h3>握拳抽牌</h3>
-                    <p>選中想要的卡片後，握緊拳頭抽取貓咪塔羅</p>
+                    <h3>握拳召喚</h3>
+                    <p>握緊拳頭召喚神獸</p>
                 </div>
                 <div class="step">
-                    <div class="step-icon">🐱</div>
-                    <h3>聆聽貓咪</h3>
-                    <p>閱讀牌義，讓貓咪為你指引方向</p>
+                    <div class="step-icon">🐲</div>
+                    <h3>接受祝福</h3>
+                    <p>神獸現身帶來福氣</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">👌</div>
+                    <h3>收下祝福</h3>
+                    <p>比OK手勢收下祝福</p>
                 </div>
             </div>
-            <button class="btn tutorial-btn" id="tutorialBtn">開始體驗</button>
+            <button class="btn tutorial-btn" id="tutorialBtn">開始占卜</button>
         </div>
     </div>
 

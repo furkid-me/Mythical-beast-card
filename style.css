@@ -1,40 +1,40 @@
 :root {
-  /* 貓咪塔羅牌 - 神秘優雅配色 */
-  --color-primary: hsl(265, 65%, 50%);
-  --color-primary-light: hsl(265, 65%, 65%);
-  --color-primary-dark: hsl(265, 65%, 35%);
+  /* 神獸卡牌 - 招財納福配色 */
+  --color-primary: hsl(0, 70%, 45%);
+  --color-primary-light: hsl(0, 70%, 55%);
+  --color-primary-dark: hsl(0, 70%, 35%);
 
-  --color-secondary: hsl(280, 60%, 55%);
+  --color-secondary: hsl(25, 80%, 50%);
   --color-accent: hsl(35, 90%, 60%);
-  --color-gold: hsl(42, 100%, 65%);
+  --color-gold: hsl(42, 100%, 60%);
 
-  --color-bg-dark: hsl(250, 25%, 7%);
-  --color-bg-medium: hsl(250, 20%, 11%);
-  --color-bg-light: hsl(250, 15%, 16%);
+  --color-bg-dark: hsl(0, 15%, 8%);
+  --color-bg-medium: hsl(0, 12%, 12%);
+  --color-bg-light: hsl(0, 10%, 18%);
 
-  --color-text-primary: hsl(0, 0%, 98%);
-  --color-text-secondary: hsl(0, 0%, 80%);
-  --color-text-muted: hsl(0, 0%, 60%);
+  --color-text-primary: hsl(45, 100%, 95%);
+  --color-text-secondary: hsl(40, 50%, 80%);
+  --color-text-muted: hsl(35, 30%, 60%);
 
-  /* Glassmorphism 漸變 */
+  /* 神獸漸變 */
   --gradient-primary: linear-gradient(135deg,
-      hsl(265, 65%, 40%) 0%,
-      hsl(280, 60%, 45%) 50%,
-      hsl(295, 55%, 50%) 100%);
+      hsl(0, 70%, 40%) 0%,
+      hsl(25, 80%, 45%) 50%,
+      hsl(42, 100%, 55%) 100%);
 
   --gradient-glass: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0.05) 100%);
+      rgba(255, 215, 0, 0.1) 0%,
+      rgba(255, 100, 50, 0.05) 100%);
 
   --gradient-card: linear-gradient(145deg,
-      hsla(265, 60%, 25%, 0.6) 0%,
-      hsla(280, 55%, 30%, 0.4) 100%);
+      hsla(0, 60%, 25%, 0.6) 0%,
+      hsla(25, 55%, 30%, 0.4) 100%);
 
   /* 現代陰影系統 */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
-  --shadow-glow: 0 0 30px rgba(180, 120, 255, 0.4);
+  --shadow-glow: 0 0 30px rgba(255, 180, 50, 0.4);
   --shadow-gold: 0 0 40px rgba(255, 200, 100, 0.5);
 
   /* 間距系統 */
@@ -83,7 +83,7 @@ body {
   bottom: 0;
 }
 
-/* 動態背景 - 優雅漸層 */
+/* 動態背景 - 神獸祥雲 */
 body::before {
   content: '';
   position: fixed;
@@ -92,9 +92,9 @@ body::before {
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse at 20% 20%, hsla(265, 65%, 40%, 0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, hsla(280, 60%, 45%, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, hsla(295, 55%, 35%, 0.1) 0%, transparent 60%);
+    radial-gradient(ellipse at 20% 20%, hsla(0, 70%, 40%, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, hsla(42, 100%, 50%, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, hsla(25, 80%, 40%, 0.1) 0%, transparent 60%);
   z-index: -1;
   animation: bgShift 30s ease-in-out infinite;
 }
@@ -227,8 +227,8 @@ h1 {
 
 .gesture-indicator.detecting {
   background: linear-gradient(135deg,
-      hsla(265, 65%, 50%, 0.4) 0%,
-      hsla(280, 60%, 55%, 0.4) 100%);
+      hsla(0, 70%, 50%, 0.4) 0%,
+      hsla(42, 100%, 55%, 0.4) 100%);
   border-color: var(--color-gold);
   box-shadow: var(--shadow-gold);
   animation: indicatorPulse 2s ease-in-out infinite;
@@ -258,7 +258,7 @@ h1 {
   color: var(--color-text-primary);
 }
 
-/* 塔羅牌展示區 - 攟開在桌面的感覺 */
+/* 神獸卡牌展示區 - 攤開在桌面的感覺 */
 .tarot-carousel {
   height: calc(100vh - 240px);
   max-height: 700px;
@@ -420,7 +420,7 @@ h1 {
   text-align: center;
 }
 
-/* 教學覆蓋層 - Modern Glassmorphism */
+/* 教學覆蓋層 - 神獸祥瑞風格 */
 .tutorial-overlay {
   position: fixed;
   top: 0;
@@ -428,8 +428,8 @@ h1 {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg,
-    rgba(15, 10, 30, 0.97) 0%,
-    rgba(25, 15, 45, 0.97) 100%);
+    rgba(25, 10, 10, 0.97) 0%,
+    rgba(40, 20, 15, 0.97) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;
@@ -439,6 +439,8 @@ h1 {
   opacity: 1;
   visibility: visible;
   transition: all var(--transition-slow);
+  overflow-y: auto;
+  padding: var(--spacing-md);
 }
 
 .tutorial-overlay.hidden {
@@ -448,69 +450,71 @@ h1 {
 }
 
 .tutorial-content {
-  max-width: 900px;
-  padding: var(--spacing-xl);
+  max-width: 950px;
+  width: 100%;
+  padding: var(--spacing-lg);
   text-align: center;
+  margin: auto;
 }
 
 .tutorial-content h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   font-weight: 600;
   background: linear-gradient(135deg, var(--color-gold), hsl(35, 95%, 75%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
   letter-spacing: 0.03em;
 }
 
 .tutorial-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 .step {
   background: var(--gradient-glass);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
   transition: all var(--transition-medium);
 }
 
 .step:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--color-gold);
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-gold);
 }
 
 .step-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
   line-height: 1;
 }
 
 .step h3 {
   color: var(--color-gold);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .step p {
   color: var(--color-text-secondary);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  line-height: 1.5;
+  font-size: 0.85rem;
 }
 
 .tutorial-btn {
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-sm) var(--spacing-xl);
   border: none;
   border-radius: var(--border-radius-full);
   font-family: var(--font-primary);
@@ -594,20 +598,35 @@ h1 {
   }
 
   .tutorial-steps {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
   }
 
   .tutorial-content {
-    padding: var(--spacing-lg) var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .tutorial-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-md);
   }
 
   .step {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
   }
 
   .step-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .step h3 {
+    font-size: 0.9rem;
+  }
+
+  .step p {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 
   .gesture-indicator {
@@ -666,15 +685,30 @@ h1 {
   }
 
   .tutorial-content h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .tutorial-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .step {
+    padding: var(--spacing-xs);
+  }
+
+  .step-icon {
+    font-size: 1.8rem;
   }
 
   .step h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .step p {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
+    line-height: 1.3;
   }
 
   .tutorial-btn {

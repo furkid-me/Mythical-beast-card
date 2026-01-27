@@ -1,27 +1,23 @@
-// 塔羅牌資料庫 - 22 張大阿爾克那
+// 神獸卡牌資料庫
 const tarotCards = [
-    { id: 0, name: '愚者', nameEn: 'The Fool', meaning: '新的開始、純真、自發性。愚者代表著踏上新旅程的勇氣，保持開放的心態，勇於冒險和探索未知。這是一個充滿可能性的時刻。', reversedMeaning: '魯莽、不負責任、冒險過度。需要更謹慎地考慮後果。' },
-    { id: 1, name: '魔術師', nameEn: 'The Magician', meaning: '創造力、技能、意志力。魔術師象徵著將想法轉化為現實的能力。你擁有所需的工具和才能來實現目標。', reversedMeaning: '操縱、缺乏技巧、浪費潛力。可能在濫用你的才能。' },
-    { id: 2, name: '女祭司', nameEn: 'The High Priestess', meaning: '直覺、神秘、內在智慧。女祭司提醒你傾聽內心的聲音，相信你的直覺。知識和智慧來自於內在的探索。', reversedMeaning: '忽視直覺、秘密、缺乏個人中心。需要更深入地探索內心。' },
-    { id: 3, name: '皇后', nameEn: 'The Empress', meaning: '豐饒、養育、自然。皇后代表著創造力、美麗和豐盛。關注生活中的美好事物，培養和滋養你的項目。', reversedMeaning: '依賴、窒息、缺乏成長。可能過度保護或物質主義。' },
-    { id: 4, name: '皇帝', nameEn: 'The Emperor', meaning: '權威、結構、掌控。皇帝象徵著秩序和穩定。通過紀律和組織來建立穩固的基礎。', reversedMeaning: '專制、僵化、缺乏紀律。權力的濫用或過度控制。' },
-    { id: 5, name: '教皇', nameEn: 'The Hierophant', meaning: '傳統、靈性導師、教育。教皇代表傳統智慧和精神指導。尋求知識和遵循既定的道路。', reversedMeaning: '反叛、非正統、個人信仰。質疑傳統和尋找自己的道路。' },
-    { id: 6, name: '戀人', nameEn: 'The Lovers', meaning: '愛情、和諧、選擇。戀人象徵著深刻的連結和重要的決定。關於價值觀和關係的抉擇。', reversedMeaning: '不和諧、錯誤選擇、價值觀衝突。關係中的挑戰。' },
-    { id: 7, name: '戰車', nameEn: 'The Chariot', meaning: '意志、決心、勝利。戰車代表著克服障礙和堅定前進。通過自律和專注來取得成功。', reversedMeaning: '失控、方向錯誤、缺乏意志。需要重新掌控局勢。' },
-    { id: 8, name: '力量', nameEn: 'Strength', meaning: '勇氣、耐心、內在力量。力量象徵著用溫柔和同情心克服挑戰。真正的力量來自內心。', reversedMeaning: '自我懷疑、缺乏信心、原始情緒。需要培養內在的勇氣。' },
-    { id: 9, name: '隱者', nameEn: 'The Hermit', meaning: '內省、尋求真理、獨處。隱者代表著內在的探索和智慧的追求。需要獨處時間來思考。', reversedMeaning: '孤立、孤獨、逃避。過度隱居或拒絕他人的幫助。' },
-    { id: 10, name: '命運之輪', nameEn: 'Wheel of Fortune', meaning: '變化、循環、命運。命運之輪象徵著生命的起伏。接受變化並相信更高的計劃。', reversedMeaning: '厄運、抗拒改變、失控。生活的負面循環。' },
-    { id: 11, name: '正義', nameEn: 'Justice', meaning: '公平、真理、因果。正義代表著平衡和誠實。你的行為會得到應有的結果。', reversedMeaning: '不公、不誠實、逃避責任。需要面對真相。' },
-    { id: 12, name: '倒吊人', nameEn: 'The Hanged Man', meaning: '暫停、放手、新視角。倒吊人象徵著犧牲和從不同角度看待事物。暫時的停滯帶來洞察。', reversedMeaning: '延遲、抗拒、無用的犧牲。拒絕改變觀點。' },
-    { id: 13, name: '死神', nameEn: 'Death', meaning: '結束、轉變、重生。死神代表著必要的結束和新的開始。擁抱變化和轉化。', reversedMeaning: '抗拒改變、停滯、恐懼。難以放手過去。' },
-    { id: 14, name: '節制', nameEn: 'Temperance', meaning: '平衡、和諧、耐心。節制象徵著中庸之道和內在的平衡。尋找生活的平衡點。', reversedMeaning: '失衡、過度、缺乏和諧。需要重新找到平衡。' },
-    { id: 15, name: '惡魔', nameEn: 'The Devil', meaning: '束縛、誘惑、唯物主義。惡魔代表著你可能被物質或慾望所困。覺察你的依賴。', reversedMeaning: '釋放、覺醒、擺脫束縛。打破限制性的習慣。' },
-    { id: 16, name: '塔', nameEn: 'The Tower', meaning: '突然改變、動盪、啟示。塔象徵著舊結構的崩潰。雖然痛苦，但為重建創造空間。', reversedMeaning: '避免災難、恐懼改變、延遲不可避免的事。' },
-    { id: 17, name: '星星', nameEn: 'The Star', meaning: '希望、靈感、重生。星星代表著在黑暗後的希望和治療。保持信念和樂觀。', reversedMeaning: '絕望、缺乏信心、失去方向。需要重新點燃希望。' },
-    { id: 18, name: '月亮', nameEn: 'The Moon', meaning: '幻覺、恐懼、潛意識。月亮象徵著不確定和迷惑。傾聽你的夢境和直覺。', reversedMeaning: '釋放恐懼、內在混亂、壓抑情緒。混亂逐漸清晰。' },
-    { id: 19, name: '太陽', nameEn: 'The Sun', meaning: '喜悅、成功、慶祝。太陽代表著光明、溫暖和積極的能量。享受生命的美好。', reversedMeaning: '暫時陰霾、過度樂觀、延遲的成功。陽光仍會到來。' },
-    { id: 20, name: '審判', nameEn: 'Judgement', meaning: '反思、清算、重生。審判象徵著覺醒和第二次機會。評估過去並向前邁進。', reversedMeaning: '自我懷疑、內疚、逃避責任。難以原諒自己。' },
-    { id: 21, name: '世界', nameEn: 'The World', meaning: '完成、成就、整合。世界代表著旅程的完成和成功。慶祝你的成就並準備新的循環。', reversedMeaning: '未完成、缺乏閉合、延遲。接近完成但還需努力。' }
+    { id: 0, name: '吉祥如意', image: '吉祥如意的主張.png', meaning: '萬事如意、心想事成。神獸為你帶來吉祥的祝福，一切順遂圓滿。' },
+    { id: 1, name: '大富翁', image: '大富翁的主張.png', meaning: '財富滿盈、富貴榮華。神獸賜予你累積財富的力量，前途一片光明。' },
+    { id: 2, name: '守護', image: '守護的主張.png', meaning: '護佑平安、趨吉避凶。神獸化身守護者，為你抵擋一切災厄。' },
+    { id: 3, name: '幸福快樂', image: '幸福快樂的主張.png', meaning: '歡樂滿溢、幸福洋溢。神獸帶來滿滿的歡笑與溫馨。' },
+    { id: 4, name: '幸福', image: '幸福的主張.png', meaning: '美滿幸福、知足常樂。神獸祝福你擁有平凡卻珍貴的幸福。' },
+    { id: 5, name: '幸運', image: '幸運的主張.png', meaning: '好運連連、福星高照。神獸為你帶來意想不到的好運氣。' },
+    { id: 6, name: '快樂', image: '快樂的主張.png', meaning: '開心愉悅、笑口常開。神獸傳遞純粹的快樂能量給你。' },
+    { id: 7, name: '恆財', image: '恆財的主張.png', meaning: '財源不絕、穩定增長。神獸賜予你持續穩定的財運。' },
+    { id: 8, name: '救世者', image: '救世者的主張.png', meaning: '濟世救人、大愛無疆。神獸賦予你幫助他人的使命與力量。' },
+    { id: 9, name: '救貧', image: '救貧的主張.png', meaning: '扶危濟困、善心善行。神獸指引你行善積德，福報自來。' },
+    { id: 10, name: '暗財', image: '暗財的主張.png', meaning: '意外之財、隱藏收穫。神獸暗中帶來不為人知的財富機遇。' },
+    { id: 11, name: '有錢人', image: '有錢人的主張.png', meaning: '腰纏萬貫、富甲一方。神獸助你邁向富裕的人生道路。' },
+    { id: 12, name: '疑難雜症', image: '疑難雜症的主張.png', meaning: '逢凶化吉、迎刃而解。神獸賜予你解決困難的智慧與勇氣。' },
+    { id: 13, name: '發財', image: '發財的主張.png', meaning: '財運亨通、大發利市。神獸帶來強大的招財能量。' },
+    { id: 14, name: '觀測', image: '觀測的主張.png', meaning: '洞察先機、明察秋毫。神獸賦予你看透事物本質的能力。' },
+    { id: 15, name: '貴夫人', image: '貴夫人的主張.png', meaning: '貴人相助、優雅高貴。神獸帶來貴人運，助你提升格局。' },
+    { id: 16, name: '金錢', image: '金錢的主張.png', meaning: '財源廣進、金銀滿屋。神獸為你開啟金錢的大門。' },
+    { id: 17, name: '領袖', image: '領袖的主張.png', meaning: '領導才能、眾望所歸。神獸賜予你領袖的氣質與能力。' }
 ];
 
 // 應用狀態
@@ -89,57 +85,55 @@ function generateCards() {
 }
 
 // 手部位置追蹤
-let lastHandX = 0.5;
-let handMoveThreshold = 0.05;
+let handXHistory = [];
+const HAND_HISTORY_SIZE = 5;
+let lastSelectTime = 0;
+const SELECT_COOLDOWN = 200; // 選擇冷卻時間 200ms
 
-// 根據手部位置選擇卡片
+// 檢查卡片是否可選（未被抽走）
+function isCardAvailable(index) {
+    return cardElements[index] && cardElements[index].style.display !== 'none';
+}
+
+// 根據手部位置選擇卡片（使用位置映射）
 function selectCardByHandPosition(handX, handY) {
     if (isCardDrawn || isDrawing) return;
 
     // 翻轉 X 坐標（因為攝影機是鏡像的）
     const flippedX = 1 - handX;
 
-    // 檢測手勢左右滑動
-    const handDelta = flippedX - lastHandX;
+    // 記錄手部位置歷史（平滑處理）
+    handXHistory.push(flippedX);
+    if (handXHistory.length > HAND_HISTORY_SIZE) {
+        handXHistory.shift();
+    }
 
-    if (Math.abs(handDelta) > handMoveThreshold) {
-        // 手往右滑 -> 選下一張牌
-        if (handDelta > 0 && selectedCardIndex !== null && selectedCardIndex < cardElements.length - 1) {
-            // 找下一張未抽過的牌
-            for (let i = selectedCardIndex + 1; i < cardElements.length; i++) {
-                if (cardElements[i].style.opacity !== '0.3') {
-                    selectedCardIndex = i;
-                    updateSelectedCard();
-                    scrollToSelectedCard();
-                    break;
-                }
-            }
-        }
-        // 手往左滑 -> 選上一張牌
-        else if (handDelta < 0 && selectedCardIndex !== null && selectedCardIndex > 0) {
-            // 找上一張未抽過的牌
-            for (let i = selectedCardIndex - 1; i >= 0; i--) {
-                if (cardElements[i].style.opacity !== '0.3') {
-                    selectedCardIndex = i;
-                    updateSelectedCard();
-                    scrollToSelectedCard();
-                    break;
-                }
-            }
-        }
-        // 如果還沒選中任何牌，選中第一張
-        else if (selectedCardIndex === null) {
-            for (let i = 0; i < cardElements.length; i++) {
-                if (cardElements[i].style.opacity !== '0.3') {
-                    selectedCardIndex = i;
-                    updateSelectedCard();
-                    scrollToSelectedCard();
-                    break;
-                }
-            }
-        }
+    // 計算平均位置
+    const avgX = handXHistory.reduce((a, b) => a + b, 0) / handXHistory.length;
 
-        lastHandX = flippedX;
+    // 取得可用卡片列表
+    const availableCards = [];
+    cardElements.forEach((card, index) => {
+        if (isCardAvailable(index)) {
+            availableCards.push(index);
+        }
+    });
+
+    if (availableCards.length === 0) return;
+
+    // 將手部 X 位置映射到卡片索引（0.1 ~ 0.9 範圍）
+    const normalizedX = Math.max(0, Math.min(1, (avgX - 0.1) / 0.8));
+    const targetIndex = Math.floor(normalizedX * availableCards.length);
+    const clampedIndex = Math.max(0, Math.min(availableCards.length - 1, targetIndex));
+    const newSelectedIndex = availableCards[clampedIndex];
+
+    // 檢查是否需要更新選擇
+    const currentTime = Date.now();
+    if (newSelectedIndex !== selectedCardIndex && currentTime - lastSelectTime >= SELECT_COOLDOWN) {
+        selectedCardIndex = newSelectedIndex;
+        updateSelectedCard();
+        scrollToSelectedCard();
+        lastSelectTime = currentTime;
     }
 }
 
@@ -168,7 +162,7 @@ function updateSelectedCard() {
 
     // 更新提示文字
     if (selectedCardIndex !== null) {
-        updateGestureStatus('✊', `已選第 ${selectedCardIndex + 1} 張，握拳抽牌`);
+        updateGestureStatus('✊', `已選第 ${selectedCardIndex + 1} 張，握拳召喚`);
     }
 }
 
@@ -234,7 +228,7 @@ async function initializeCamera() {
         startBtn.textContent = '✅ 運行中';
         startBtn.style.display = 'none';
         gestureStatus.classList.add('active');
-        updateGestureStatus('👋', '移動手掌選擇卡片');
+        updateGestureStatus('👋', '移動手掌選擇神獸');
 
     } catch (error) {
         console.error('初始化失敗:', error);
@@ -246,7 +240,7 @@ async function initializeCamera() {
 
 function onResults(results) {
     if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
-        updateGestureStatus('👋', '未偵測到手部');
+        updateGestureStatus('🖐️', '請伸出手掌');
         return;
     }
 
@@ -267,43 +261,51 @@ let gestureStartTime = 0;
 let lastGesture = 'none';
 
 function detectGesture(landmarks) {
-    // 檢測 OK 手勢（拇指和食指指尖靠近）
+    // 檢測 OK 手勢（拇指和食指指尖靠近，其他手指伸展）
     const thumbTip = landmarks[4];
     const indexTip = landmarks[8];
     const thumbIndexDist = Math.hypot(thumbTip.x - indexTip.x, thumbTip.y - indexTip.y);
 
-    if (thumbIndexDist < 0.05) {
+    // OK 手勢：拇指食指靠近，且中指伸展
+    const middleExtended = isFingerExtended(landmarks, 12, 10);
+    if (thumbIndexDist < 0.06 && middleExtended) {
         return 'ok';
     }
 
+    // 檢測各手指是否伸展
     const fingers = {
-        thumb: isFingerExtended(landmarks, 4, 3, 2),
-        index: isFingerExtended(landmarks, 8, 7, 6),
-        middle: isFingerExtended(landmarks, 12, 11, 10),
-        ring: isFingerExtended(landmarks, 16, 15, 14),
-        pinky: isFingerExtended(landmarks, 20, 19, 18)
+        index: isFingerExtended(landmarks, 8, 6),
+        middle: isFingerExtended(landmarks, 12, 10),
+        ring: isFingerExtended(landmarks, 16, 14),
+        pinky: isFingerExtended(landmarks, 20, 18)
     };
 
     const extendedCount = Object.values(fingers).filter(v => v).length;
 
-    if (extendedCount <= 2) {
+    // 握拳：所有四指都彎曲（不含拇指）
+    if (extendedCount <= 1) {
         return 'fist';
-    } else if (extendedCount >= 3) {
+    }
+    // 張開手掌：至少3指伸展
+    else if (extendedCount >= 3) {
         return 'open';
     }
 
     return 'none';
 }
 
-function isFingerExtended(landmarks, tipIdx, pipIdx, mcpIdx) {
+function isFingerExtended(landmarks, tipIdx, mcpIdx) {
     const tip = landmarks[tipIdx];
-    const pip = landmarks[pipIdx];
+    const mcp = landmarks[mcpIdx];
     const wrist = landmarks[0];
 
-    const tipDist = Math.hypot(tip.x - wrist.x, tip.y - wrist.y);
-    const pipDist = Math.hypot(pip.x - wrist.x, pip.y - wrist.y);
+    // 計算指尖到手腕的距離
+    const tipToWrist = Math.hypot(tip.x - wrist.x, tip.y - wrist.y);
+    // 計算指根到手腕的距離
+    const mcpToWrist = Math.hypot(mcp.x - wrist.x, mcp.y - wrist.y);
 
-    return tipDist > pipDist * 1.05;
+    // 如果指尖比指根離手腕更遠，表示手指伸展
+    return tipToWrist > mcpToWrist * 1.15;
 }
 
 function detectShakeGesture(handX) {
@@ -327,8 +329,8 @@ function detectShakeGesture(handX) {
 
 let fistDetectedTime = 0;
 let okDetectedTime = 0;
-const FIST_HOLD_TIME = 150; // 握拳需要保持 150ms
-const OK_HOLD_TIME = 200; // OK手勢需要保持 200ms
+const FIST_HOLD_TIME = 400; // 握拳需要保持 400ms
+const OK_HOLD_TIME = 300; // OK手勢需要保持 300ms
 
 function handleGesture(gesture, landmarks) {
     const currentTime = Date.now();
@@ -340,13 +342,13 @@ function handleGesture(gesture, landmarks) {
                 okDetectedTime = currentTime;
                 updateGestureStatus('👌', '保持OK手勢...', true);
             } else if (currentTime - okDetectedTime >= OK_HOLD_TIME) {
-                updateGestureStatus('👌', '收起卡片！', true);
+                updateGestureStatus('👌', '收起神獸！', true);
                 collectCard();
                 okDetectedTime = 0;
             }
         } else {
             okDetectedTime = 0;
-            updateGestureStatus('👌', 'OK手勢收起卡片');
+            updateGestureStatus('👌', 'OK手勢收起神獸');
         }
         return;
     }
@@ -355,9 +357,9 @@ function handleGesture(gesture, landmarks) {
     if (gesture === 'open') {
         fistDetectedTime = 0;
         if (selectedCardIndex !== null) {
-            updateGestureStatus('👋', '握拳抽取選中的卡片');
+            updateGestureStatus('👋', '握拳召喚選中的神獸');
         } else {
-            updateGestureStatus('👋', '左右滑動選擇卡片');
+            updateGestureStatus('👋', '左右滑動選擇神獸');
         }
     }
     // 握拳 - 抽牌
@@ -366,7 +368,7 @@ function handleGesture(gesture, landmarks) {
             fistDetectedTime = currentTime;
             updateGestureStatus('✊', '保持握拳...', true);
         } else if (currentTime - fistDetectedTime >= FIST_HOLD_TIME) {
-            updateGestureStatus('✊', '抽牌！', true);
+            updateGestureStatus('✊', '召喚！', true);
             drawCard();
             fistDetectedTime = 0;
         }
@@ -394,18 +396,8 @@ function drawCard() {
 
     isDrawing = true;
     isCardDrawn = true;
-    const selectedCard = tarotCards[selectedCardIndex];
-    const isReversed = Math.random() > 0.5;
 
     const cardElement = cardElements[selectedCardIndex];
-
-    // 設定正逆位
-    const img = cardElement.querySelector('.card-front img');
-    if (isReversed) {
-        img.style.transform = 'rotate(180deg)';
-    } else {
-        img.style.transform = 'rotate(0deg)';
-    }
 
     // 移除選中樣式，直接顯示抽出的卡片
     cardElement.classList.remove('selected');
@@ -415,20 +407,7 @@ function drawCard() {
     const carousel = document.getElementById('tarotCarousel');
     carousel.classList.add('card-drawn');
 
-    // 顯示牌義
-    cardName.textContent = selectedCard.name + (isReversed ? ' (逆位)' : ' (正位)');
-    cardNameEn.textContent = selectedCard.nameEn + (isReversed ? ' - Reversed' : ' - Upright');
-    cardMeaning.textContent = isReversed ? selectedCard.reversedMeaning : selectedCard.meaning;
-
-    infoPanel.classList.add('visible');
-    updateGestureStatus('👌', 'OK手勢收起卡片');
-
-    // 手機上確保牌義可見
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }, 100);
+    updateGestureStatus('👌', 'OK手勢收起神獸');
 
     isDrawing = false;
 }
@@ -439,7 +418,6 @@ function collectCard() {
 
     const cardElement = cardElements[selectedCardIndex];
     const selectedCard = tarotCards[selectedCardIndex];
-    const isReversed = cardElement.querySelector('.card-front img').style.transform === 'rotate(180deg)';
 
     // 隱藏資訊面板
     infoPanel.classList.remove('visible');
@@ -448,19 +426,17 @@ function collectCard() {
     const collectedCards = document.getElementById('collectedCards');
     const collectedCard = document.createElement('div');
     collectedCard.className = 'collected-card';
-    collectedCard.title = selectedCard.name + (isReversed ? ' (逆位)' : ' (正位)');
+    collectedCard.title = selectedCard.name;
 
     const img = document.createElement('img');
     img.src = getCardImage(selectedCard.id);
     img.alt = selectedCard.name;
-    if (isReversed) {
-        img.style.transform = 'rotate(180deg)';
-    }
     collectedCard.appendChild(img);
 
-    // 點擊收集的卡片可以查看詳情
-    collectedCard.addEventListener('click', () => {
-        alert(`${selectedCard.name} (${isReversed ? '逆位' : '正位'})\n\n${isReversed ? selectedCard.reversedMeaning : selectedCard.meaning}`);
+    // 點擊收集的卡片可以再次查看圖片
+    collectedCard.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showCardPreview(selectedCard);
     });
 
     collectedCards.appendChild(collectedCard);
@@ -477,7 +453,7 @@ function collectCard() {
     selectedCardIndex = null;
     isCardDrawn = false;
 
-    updateGestureStatus('👋', '選擇下一張卡片');
+    updateGestureStatus('👋', '選擇下一位神獸');
 }
 
 // 關閉卡片函數（點擊關閉，也會收集）
@@ -485,8 +461,42 @@ function slideAwayCard() {
     collectCard();
 }
 
+// 顯示卡牌預覽
+function showCardPreview(card) {
+    // 創建預覽遮罩
+    const overlay = document.createElement('div');
+    overlay.className = 'card-preview-overlay';
+
+    // 創建卡牌容器
+    const cardContainer = document.createElement('div');
+    cardContainer.className = 'card-preview';
+
+    // 創建卡牌圖片
+    const img = document.createElement('img');
+    img.src = getCardImage(card.id);
+    img.alt = card.name;
+
+    cardContainer.appendChild(img);
+    overlay.appendChild(cardContainer);
+    document.body.appendChild(overlay);
+
+    // 動畫顯示
+    requestAnimationFrame(() => {
+        overlay.classList.add('visible');
+    });
+
+    // 點擊關閉預覽
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('visible');
+        setTimeout(() => {
+            overlay.remove();
+        }, 300);
+    });
+}
+
 function getCardImage(cardId) {
-    return `PIC/${cardId}.png`;
+    const card = tarotCards.find(c => c.id === cardId);
+    return card ? `PIC/${card.image}` : 'PIC/back.png';
 }
 
 // 初始化
@@ -499,5 +509,5 @@ document.addEventListener('click', (e) => {
     }
 });
 
-console.log('%c🐱 貓咪塔羅牌已載入', 'font-size: 20px; color: #B464FF; font-weight: bold;');
+console.log('%c🐉 神獸卡牌已載入', 'font-size: 20px; color: #B464FF; font-weight: bold;');
 console.log('%c左右滑動選牌，握拳抽牌，或直接點擊卡片', 'font-size: 14px; color: #FF64E8;');

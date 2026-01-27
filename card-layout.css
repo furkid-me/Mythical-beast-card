@@ -1,4 +1,4 @@
-/* 塔羅牌一字排開 - 可左右滑動 */
+/* 神獸卡牌一字排開 - 可左右滑動 */
 .tarot-carousel {
     width: 100%;
     padding: 80px 20px 40px;
@@ -64,18 +64,18 @@
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
-    width: 280px !important;
-    height: 448px !important;
-    max-width: 85vw !important;
-    max-height: 70vh !important;
+    width: 336px !important;
+    height: 538px !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
     margin: 0 !important;
     margin-right: 0 !important;
     transform: translate(-50%, -50%) !important;
     z-index: 9999 !important;
-    box-shadow: 0 0 80px rgba(255, 215, 0, 1),
-        0 30px 100px rgba(0, 0, 0, 0.8) !important;
-    border: 5px solid var(--color-gold) !important;
-    border-radius: 14px !important;
+    box-shadow: 0 0 100px rgba(255, 215, 0, 1),
+        0 40px 120px rgba(0, 0, 0, 0.8) !important;
+    border: 6px solid var(--color-gold) !important;
+    border-radius: 16px !important;
     background: white !important;
 }
 
@@ -177,8 +177,57 @@
     object-fit: cover;
 }
 
+/* 卡牌預覽遮罩 */
+.card-preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.card-preview-overlay.visible {
+    opacity: 1;
+}
+
+.card-preview {
+    width: 336px;
+    height: 538px;
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 100px rgba(255, 215, 0, 1),
+                0 40px 120px rgba(0, 0, 0, 0.8);
+    border: 6px solid hsl(42, 100%, 60%);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.card-preview-overlay.visible .card-preview {
+    transform: scale(1);
+}
+
+.card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* 手機版響應式樣式 */
 @media (max-width: 768px) {
+    .card-preview {
+        width: 240px;
+        height: 384px;
+    }
     .tarot-carousel {
         padding: 40px 10px 20px;
     }
@@ -199,9 +248,9 @@
     }
 
     .tarot-card.drawn {
-        width: 200px !important;
-        height: 320px !important;
-        top: 38% !important;
+        width: 240px !important;
+        height: 384px !important;
+        top: 45% !important;
         transform: translate(-50%, -50%) !important;
     }
 
@@ -225,6 +274,12 @@
 }
 
 @media (max-width: 480px) {
+    .card-preview {
+        width: 216px;
+        height: 346px;
+        border-width: 3px;
+    }
+
     .tarot-carousel {
         padding: 30px 5px 15px;
     }
@@ -245,11 +300,11 @@
     }
 
     .tarot-card.drawn {
-        width: 180px !important;
-        height: 288px !important;
-        top: 38% !important;
+        width: 216px !important;
+        height: 346px !important;
+        top: 45% !important;
         transform: translate(-50%, -50%) !important;
-        border-width: 2px !important;
+        border-width: 3px !important;
     }
 
     .tarot-card.slide-away {
