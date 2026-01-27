@@ -567,12 +567,13 @@ h1 {
   }
 
   .info-panel {
-    padding: var(--spacing-sm);
-    top: 72%;
+    padding: var(--spacing-xs);
+    top: auto;
     bottom: 0;
-    max-height: none;
+    height: 16.67%;
+    max-height: 16.67%;
     overflow-y: auto;
-    border-radius: 16px 16px 0 0;
+    border-radius: 12px 12px 0 0;
     transform: none !important;
     opacity: 0;
     visibility: hidden;
@@ -583,6 +584,13 @@ h1 {
     opacity: 1;
     visibility: visible;
     transform: none !important;
+  }
+
+  .card-meaning {
+    max-height: 50px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: var(--spacing-xs);
   }
 
   .tutorial-steps {
@@ -651,8 +659,10 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-xs);
-    top: 72%;
+    top: auto;
     bottom: 0;
+    height: 16.67%;
+    max-height: 16.67%;
   }
 
   .tutorial-content h2 {

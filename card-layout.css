@@ -199,9 +199,9 @@
     }
 
     .tarot-card.drawn {
-        width: 180px !important;
-        height: 288px !important;
-        top: 28% !important;
+        width: 200px !important;
+        height: 320px !important;
+        top: 38% !important;
         transform: translate(-50%, -50%) !important;
     }
 
@@ -245,9 +245,9 @@
     }
 
     .tarot-card.drawn {
-        width: 160px !important;
-        height: 256px !important;
-        top: 28% !important;
+        width: 180px !important;
+        height: 288px !important;
+        top: 38% !important;
         transform: translate(-50%, -50%) !important;
         border-width: 2px !important;
     }
