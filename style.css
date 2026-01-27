@@ -568,7 +568,7 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-sm);
-    top: 66%;
+    top: 72%;
     bottom: 0;
     max-height: none;
     overflow-y: auto;
@@ -651,7 +651,7 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-xs);
-    top: 66%;
+    top: 72%;
     bottom: 0;
   }
 

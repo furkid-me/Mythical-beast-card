@@ -201,7 +201,7 @@
     .tarot-card.drawn {
         width: 180px !important;
         height: 288px !important;
-        top: 33% !important;
+        top: 28% !important;
         transform: translate(-50%, -50%) !important;
     }
 
@@ -247,7 +247,7 @@
     .tarot-card.drawn {
         width: 160px !important;
         height: 256px !important;
-        top: 33% !important;
+        top: 28% !important;
         transform: translate(-50%, -50%) !important;
         border-width: 2px !important;
     }
