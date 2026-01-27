@@ -559,12 +559,8 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-sm);
-    max-height: 45vh;
+    max-height: 40vh;
     overflow-y: auto;
-  }
-
-  .info-panel.visible {
-    transform: translateY(0);
   }
 
   .tutorial-steps {
@@ -633,12 +629,8 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-xs);
-    max-height: 50vh;
+    max-height: 45vh;
     overflow-y: auto;
-  }
-
-  .info-content {
-    padding: 0;
   }
 
   .tutorial-content h2 {
