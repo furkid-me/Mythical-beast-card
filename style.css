@@ -568,12 +568,21 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-sm);
-    top: 260px;
-    bottom: auto;
-    max-height: calc(100vh - 280px);
-    max-height: calc(100dvh - 280px);
+    top: 250px;
+    bottom: 0;
+    max-height: none;
     overflow-y: auto;
     border-radius: 16px 16px 0 0;
+    transform: none !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .info-panel.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none !important;
   }
 
   .tutorial-steps {
@@ -642,11 +651,8 @@ h1 {
 
   .info-panel {
     padding: var(--spacing-xs);
-    top: 220px;
-    bottom: auto;
-    max-height: calc(100vh - 240px);
-    max-height: calc(100dvh - 240px);
-    overflow-y: auto;
+    top: 210px;
+    bottom: 0;
   }
 
   .tutorial-content h2 {
