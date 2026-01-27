@@ -174,3 +174,95 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* 手機版響應式樣式 */
+@media (max-width: 768px) {
+    .tarot-carousel {
+        padding: 40px 10px 20px;
+    }
+
+    .carousel-track {
+        padding: 40px 20px;
+    }
+
+    .tarot-card {
+        width: 100px;
+        height: 160px;
+        margin-right: -25px;
+        border-radius: 8px;
+    }
+
+    .tarot-card.selected {
+        transform: translateY(-50px) scale(1.3);
+    }
+
+    .tarot-card.drawn {
+        width: 200px !important;
+        height: 320px !important;
+    }
+
+    .tarot-card.slide-away {
+        width: 150px !important;
+        height: 240px !important;
+    }
+
+    .collected-cards {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .collected-card {
+        width: 50px;
+        height: 80px;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarot-carousel {
+        padding: 30px 5px 15px;
+    }
+
+    .carousel-track {
+        padding: 30px 10px;
+    }
+
+    .tarot-card {
+        width: 80px;
+        height: 128px;
+        margin-right: -20px;
+        border-radius: 6px;
+    }
+
+    .tarot-card.selected {
+        transform: translateY(-40px) scale(1.25);
+    }
+
+    .tarot-card.drawn {
+        width: 180px !important;
+        height: 288px !important;
+        border-width: 3px !important;
+    }
+
+    .tarot-card.slide-away {
+        width: 120px !important;
+        height: 192px !important;
+    }
+
+    .collected-cards {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .collected-card {
+        width: 40px;
+        height: 64px;
+        border-radius: 4px;
+    }
+}
