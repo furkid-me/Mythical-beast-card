@@ -1,23 +1,23 @@
 // 神獸卡牌資料庫
 const tarotCards = [
-    { id: 0, name: '吉祥如意', image: '吉祥如意的主張.png', meaning: '萬事如意、心想事成。神獸為你帶來吉祥的祝福，一切順遂圓滿。' },
-    { id: 1, name: '大富翁', image: '大富翁的主張.png', meaning: '財富滿盈、富貴榮華。神獸賜予你累積財富的力量，前途一片光明。' },
-    { id: 2, name: '守護', image: '守護的主張.png', meaning: '護佑平安、趨吉避凶。神獸化身守護者，為你抵擋一切災厄。' },
-    { id: 3, name: '幸福快樂', image: '幸福快樂的主張.png', meaning: '歡樂滿溢、幸福洋溢。神獸帶來滿滿的歡笑與溫馨。' },
-    { id: 4, name: '幸福', image: '幸福的主張.png', meaning: '美滿幸福、知足常樂。神獸祝福你擁有平凡卻珍貴的幸福。' },
-    { id: 5, name: '幸運', image: '幸運的主張.png', meaning: '好運連連、福星高照。神獸為你帶來意想不到的好運氣。' },
-    { id: 6, name: '快樂', image: '快樂的主張.png', meaning: '開心愉悅、笑口常開。神獸傳遞純粹的快樂能量給你。' },
-    { id: 7, name: '恆財', image: '恆財的主張.png', meaning: '財源不絕、穩定增長。神獸賜予你持續穩定的財運。' },
-    { id: 8, name: '救世者', image: '救世者的主張.png', meaning: '濟世救人、大愛無疆。神獸賦予你幫助他人的使命與力量。' },
-    { id: 9, name: '救貧', image: '救貧的主張.png', meaning: '扶危濟困、善心善行。神獸指引你行善積德，福報自來。' },
-    { id: 10, name: '暗財', image: '暗財的主張.png', meaning: '意外之財、隱藏收穫。神獸暗中帶來不為人知的財富機遇。' },
-    { id: 11, name: '有錢人', image: '有錢人的主張.png', meaning: '腰纏萬貫、富甲一方。神獸助你邁向富裕的人生道路。' },
-    { id: 12, name: '疑難雜症', image: '疑難雜症的主張.png', meaning: '逢凶化吉、迎刃而解。神獸賜予你解決困難的智慧與勇氣。' },
-    { id: 13, name: '發財', image: '發財的主張.png', meaning: '財運亨通、大發利市。神獸帶來強大的招財能量。' },
-    { id: 14, name: '觀測', image: '觀測的主張.png', meaning: '洞察先機、明察秋毫。神獸賦予你看透事物本質的能力。' },
-    { id: 15, name: '貴夫人', image: '貴夫人的主張.png', meaning: '貴人相助、優雅高貴。神獸帶來貴人運，助你提升格局。' },
-    { id: 16, name: '金錢', image: '金錢的主張.png', meaning: '財源廣進、金銀滿屋。神獸為你開啟金錢的大門。' },
-    { id: 17, name: '領袖', image: '領袖的主張.png', meaning: '領導才能、眾望所歸。神獸賜予你領袖的氣質與能力。' }
+    { id: 0, name: '吉祥如意', image: '吉祥如意的主張.webp', meaning: '萬事如意、心想事成。神獸為你帶來吉祥的祝福，一切順遂圓滿。' },
+    { id: 1, name: '大富翁', image: '大富翁的主張.webp', meaning: '財富滿盈、富貴榮華。神獸賜予你累積財富的力量，前途一片光明。' },
+    { id: 2, name: '守護', image: '守護的主張.webp', meaning: '護佑平安、趨吉避凶。神獸化身守護者，為你抵擋一切災厄。' },
+    { id: 3, name: '幸福快樂', image: '幸福快樂的主張.webp', meaning: '歡樂滿溢、幸福洋溢。神獸帶來滿滿的歡笑與溫馨。' },
+    { id: 4, name: '幸福', image: '幸福的主張.webp', meaning: '美滿幸福、知足常樂。神獸祝福你擁有平凡卻珍貴的幸福。' },
+    { id: 5, name: '幸運', image: '幸運的主張.webp', meaning: '好運連連、福星高照。神獸為你帶來意想不到的好運氣。' },
+    { id: 6, name: '快樂', image: '快樂的主張.webp', meaning: '開心愉悅、笑口常開。神獸傳遞純粹的快樂能量給你。' },
+    { id: 7, name: '恆財', image: '恆財的主張.webp', meaning: '財源不絕、穩定增長。神獸賜予你持續穩定的財運。' },
+    { id: 8, name: '救世者', image: '救世者的主張.webp', meaning: '濟世救人、大愛無疆。神獸賦予你幫助他人的使命與力量。' },
+    { id: 9, name: '救貧', image: '救貧的主張.webp', meaning: '扶危濟困、善心善行。神獸指引你行善積德，福報自來。' },
+    { id: 10, name: '暗財', image: '暗財的主張.webp', meaning: '意外之財、隱藏收穫。神獸暗中帶來不為人知的財富機遇。' },
+    { id: 11, name: '有錢人', image: '有錢人的主張.webp', meaning: '腰纏萬貫、富甲一方。神獸助你邁向富裕的人生道路。' },
+    { id: 12, name: '疑難雜症', image: '疑難雜症的主張.webp', meaning: '逢凶化吉、迎刃而解。神獸賜予你解決困難的智慧與勇氣。' },
+    { id: 13, name: '發財', image: '發財的主張.webp', meaning: '財運亨通、大發利市。神獸帶來強大的招財能量。' },
+    { id: 14, name: '觀測', image: '觀測的主張.webp', meaning: '洞察先機、明察秋毫。神獸賦予你看透事物本質的能力。' },
+    { id: 15, name: '貴夫人', image: '貴夫人的主張.webp', meaning: '貴人相助、優雅高貴。神獸帶來貴人運，助你提升格局。' },
+    { id: 16, name: '金錢', image: '金錢的主張.webp', meaning: '財源廣進、金銀滿屋。神獸為你開啟金錢的大門。' },
+    { id: 17, name: '領袖', image: '領袖的主張.webp', meaning: '領導才能、眾望所歸。神獸賜予你領袖的氣質與能力。' }
 ];
 
 // 應用狀態
@@ -57,7 +57,7 @@ function generateCards() {
         const cardBack = document.createElement('div');
         cardBack.className = 'card-back';
         const backImg = document.createElement('img');
-        backImg.src = 'PIC/back.png';
+        backImg.src = 'PIC/back.webp';
         backImg.alt = '卡牌背面';
         cardBack.appendChild(backImg);
 
@@ -496,7 +496,7 @@ function showCardPreview(card) {
 
 function getCardImage(cardId) {
     const card = tarotCards.find(c => c.id === cardId);
-    return card ? `PIC/${card.image}` : 'PIC/back.png';
+    return card ? `PIC/${card.image}` : 'PIC/back.webp';
 }
 
 // 初始化
