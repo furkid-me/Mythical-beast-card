@@ -191,18 +191,18 @@ async function initializeCamera() {
 
         hands.setOptions({
             maxNumHands: 1,
-            modelComplexity: 1,
-            minDetectionConfidence: 0.3, // 降低門檻，提高偵測靈敏度
-            minTrackingConfidence: 0.3
+            modelComplexity: 0, // 使用較輕量的模型，提高處理速度
+            minDetectionConfidence: 0.2, // 進一步降低門檻
+            minTrackingConfidence: 0.2
         });
 
         hands.onResults(onResults);
 
-        // 啟動攝影機
+        // 啟動攝影機（使用較低解析度提高處理速度）
         const stream = await navigator.mediaDevices.getUserMedia({
             video: {
-                width: { ideal: 1280 },
-                height: { ideal: 720 }
+                width: { ideal: 640 },
+                height: { ideal: 480 }
             }
         });
 
@@ -218,8 +218,8 @@ async function initializeCamera() {
             onFrame: async () => {
                 await hands.send({ image: webcamElement });
             },
-            width: 1280,
-            height: 720
+            width: 640,
+            height: 480
         });
 
         await camera.start();
@@ -238,9 +238,11 @@ async function initializeCamera() {
     }
 }
 
+let lastDebugTime = 0;
+
 function onResults(results) {
     if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
-        updateGestureStatus('🖐️', '請伸出手掌');
+        updateGestureStatus('🖐️', '請伸出手掌（未偵測到手）');
         return;
     }
 
@@ -254,6 +256,14 @@ function onResults(results) {
 
     // 偵測手勢
     const gesture = detectGesture(landmarks);
+
+    // Debug: 每秒輸出一次偵測信息
+    const now = Date.now();
+    if (now - lastDebugTime > 1000) {
+        console.log('偵測到手勢:', gesture, '手部位置:', handX.toFixed(2), handY.toFixed(2));
+        lastDebugTime = now;
+    }
+
     handleGesture(gesture, landmarks);
 }
 
@@ -266,9 +276,9 @@ function detectGesture(landmarks) {
     const indexTip = landmarks[8];
     const thumbIndexDist = Math.hypot(thumbTip.x - indexTip.x, thumbTip.y - indexTip.y);
 
-    // OK 手勢：拇指食指靠近，且中指伸展
+    // OK 手勢：拇指食指靠近，且中指伸展（放寬距離閾值）
     const middleExtended = isFingerExtended(landmarks, 12, 10);
-    if (thumbIndexDist < 0.06 && middleExtended) {
+    if (thumbIndexDist < 0.1 && middleExtended) {
         return 'ok';
     }
 
@@ -282,8 +292,8 @@ function detectGesture(landmarks) {
 
     const extendedCount = Object.values(fingers).filter(v => v).length;
 
-    // 握拳：所有四指都彎曲（不含拇指）
-    if (extendedCount <= 1) {
+    // 握拳：大部分手指彎曲（放寬判斷條件）
+    if (extendedCount <= 2) {
         return 'fist';
     }
     // 張開手掌：至少3指伸展
@@ -304,8 +314,8 @@ function isFingerExtended(landmarks, tipIdx, mcpIdx) {
     // 計算指根到手腕的距離
     const mcpToWrist = Math.hypot(mcp.x - wrist.x, mcp.y - wrist.y);
 
-    // 如果指尖比指根離手腕更遠，表示手指伸展
-    return tipToWrist > mcpToWrist * 1.15;
+    // 如果指尖比指根離手腕更遠，表示手指伸展（降低閾值提高靈敏度）
+    return tipToWrist > mcpToWrist * 1.05;
 }
 
 function detectShakeGesture(handX) {
