@@ -15,9 +15,10 @@ const tarotCards = [
     { id: 12, name: '疑難雜症', image: '疑難雜症的主張.webp', meaning: '逢凶化吉、迎刃而解。神獸賜予你解決困難的智慧與勇氣。' },
     { id: 13, name: '發財', image: '發財的主張.webp', meaning: '財運亨通、大發利市。神獸帶來強大的招財能量。' },
     { id: 14, name: '觀測', image: '觀測的主張.webp', meaning: '洞察先機、明察秋毫。神獸賦予你看透事物本質的能力。' },
-    { id: 15, name: '貴夫人', image: '貴夫人的主張.webp', meaning: '貴人相助、優雅高貴。神獸帶來貴人運，助你提升格局。' },
-    { id: 16, name: '金錢', image: '金錢的主張.webp', meaning: '財源廣進、金銀滿屋。神獸為你開啟金錢的大門。' },
-    { id: 17, name: '領袖', image: '領袖的主張.webp', meaning: '領導才能、眾望所歸。神獸賜予你領袖的氣質與能力。' }
+    { id: 15, name: '觀測 II', image: '觀測的主張 (2).webp', meaning: '審時度勢、運籌帷幄。神獸賜予你洞見未來的智慧之眼。' },
+    { id: 16, name: '貴夫人', image: '貴夫人的主張.webp', meaning: '貴人相助、優雅高貴。神獸帶來貴人運，助你提升格局。' },
+    { id: 17, name: '金錢', image: '金錢的主張.webp', meaning: '財源廣進、金銀滿屋。神獸為你開啟金錢的大門。' },
+    { id: 18, name: '領袖', image: '領袖的主張.webp', meaning: '領導才能、眾望所歸。神獸賜予你領袖的氣質與能力。' }
 ];
 
 // 應用狀態
@@ -28,6 +29,7 @@ let selectedCardIndex = null;
 let isDrawing = false;
 let isCardDrawn = false;
 let cardElements = [];
+let isSelectionLocked = false; // 握拳時鎖定選擇
 
 // 搖晃檢測
 let shakeHistory = [];
@@ -46,6 +48,7 @@ const cardNameEn = document.getElementById('cardNameEn');
 const cardMeaning = document.getElementById('cardMeaning');
 const tutorialOverlay = document.getElementById('tutorialOverlay');
 const tutorialBtn = document.getElementById('tutorialBtn');
+const restartBtn = document.getElementById('restartBtn');
 
 // 生成所有塔羅牌 - 一字排開
 function generateCards() {
@@ -97,7 +100,7 @@ function isCardAvailable(index) {
 
 // 根據手部位置選擇卡片（使用位置映射）
 function selectCardByHandPosition(handX, handY) {
-    if (isCardDrawn || isDrawing) return;
+    if (isCardDrawn || isDrawing || isSelectionLocked) return;
 
     // 翻轉 X 坐標（因為攝影機是鏡像的）
     const flippedX = 1 - handX;
@@ -166,6 +169,44 @@ function updateSelectedCard() {
     }
 }
 
+// 重新開始功能
+function restartGame() {
+    // 重置所有卡片狀態
+    cardElements.forEach((card) => {
+        card.classList.remove('selected', 'drawn');
+        card.style.display = '';
+    });
+
+    // 清空收集的卡片
+    const collectedCards = document.getElementById('collectedCards');
+    collectedCards.innerHTML = '';
+
+    // 恢復 carousel 狀態
+    const carousel = document.getElementById('tarotCarousel');
+    carousel.classList.remove('card-drawn');
+
+    // 隱藏資訊面板
+    infoPanel.classList.remove('visible');
+
+    // 重置狀態變數
+    selectedCardIndex = null;
+    isDrawing = false;
+    isCardDrawn = false;
+    isSelectionLocked = false;
+    handXHistory = [];
+    shakeHistory = [];
+    fistDetectedTime = 0;
+    okDetectedTime = 0;
+
+    // 更新手勢提示
+    updateGestureStatus('👋', '移動手掌選擇神獸');
+
+    console.log('%c🔄 遊戲已重新開始', 'font-size: 16px; color: #FFD700;');
+}
+
+// 重新開始按鈕事件
+restartBtn.addEventListener('click', restartGame);
+
 // 教學覆蓋層
 tutorialBtn.addEventListener('click', () => {
     tutorialOverlay.classList.add('hidden');
@@ -227,6 +268,7 @@ async function initializeCamera() {
         isReady = true;
         startBtn.textContent = '✅ 運行中';
         startBtn.style.display = 'none';
+        restartBtn.style.display = 'block';
         gestureStatus.classList.add('active');
         updateGestureStatus('👋', '移動手掌選擇神獸');
 
@@ -366,6 +408,7 @@ function handleGesture(gesture, landmarks) {
     // 張開手掌 - 選擇模式
     if (gesture === 'open') {
         fistDetectedTime = 0;
+        isSelectionLocked = false; // 解鎖選擇
         if (selectedCardIndex !== null) {
             updateGestureStatus('👋', '握拳召喚選中的神獸');
         } else {
@@ -374,6 +417,7 @@ function handleGesture(gesture, landmarks) {
     }
     // 握拳 - 抽牌
     else if (gesture === 'fist' && !isDrawing && selectedCardIndex !== null) {
+        isSelectionLocked = true; // 鎖定選擇，避免握拳時卡片跳動
         if (fistDetectedTime === 0) {
             fistDetectedTime = currentTime;
             updateGestureStatus('✊', '保持握拳...', true);

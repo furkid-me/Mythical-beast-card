@@ -199,6 +199,52 @@ h1 {
   transform: none;
 }
 
+/* 重新開始按鈕 */
+.restart-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: var(--gradient-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  z-index: 100;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-md);
+}
+
+.restart-btn img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.restart-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.restart-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .restart-btn {
+    top: 10px;
+    left: 10px;
+  }
+
+  .restart-btn img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 /* 手勢狀態指示器 - Glassmorphism */
 .gesture-indicator {
   position: fixed;
